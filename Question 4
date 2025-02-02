@@ -1,0 +1,14 @@
+const createMindMap = (data) => {
+    return {
+      id: 'root',
+      topic: 'Users', // Root topic for the mind map
+      children: data.map((user) => ({
+        id: `user-${user.id}`,
+        topic: user.name, // User name becomes a main topic
+        children: [
+          { id: `email-${user.id}`, topic: `Email: ${user.email}` },
+          { id: `phone-${user.id}`, topic: `Phone: ${user.phone}` },
+        ],
+      })),
+    };
+  };
